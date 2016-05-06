@@ -14,9 +14,12 @@ class PicturesController < ApplicationController
     
     ts = Time.now.utc.strftime("%Y%m%d%H%M%S.jpg")
     uploaded_io = params[:picture][:picture]
-    filepath = Rails.root.join('app', 'assets', 'images', ts)
-    tfilepath = Rails.root.join('app', 'assets', 'images', "t"+ts)
-    bfilepath = Rails.root.join('app', 'assets', 'images', "b"+ts)
+    #filepath = Rails.root.join('app', 'assets', 'images', ts)
+    #tfilepath = Rails.root.join('app', 'assets', 'images', "t"+ts)
+    #bfilepath = Rails.root.join('app', 'assets', 'images', "b"+ts)
+    filepath = Rails.root.join('public', 'assets', ts)
+    tfilepath = Rails.root.join('public', 'assets', "t"+ts)
+    bfilepath = Rails.root.join('public', 'assets', "b"+ts)
     File.open(filepath, 'wb') do |file|
       file.write(uploaded_io.read)
     end
@@ -30,9 +33,12 @@ class PicturesController < ApplicationController
   # delete a cat from the database
   def destroy
     @picture = Picture.find(params[:id])
-    filepath = Rails.root.join('app', 'assets', 'images', ""+@picture.filename)
-    tfilepath = Rails.root.join('app', 'assets', 'images', "t"+@picture.filename)
-    bfilepath = Rails.root.join('app', 'assets', 'images', "b"+@picture.filename)
+    #filepath = Rails.root.join('app', 'assets', 'images', ""+@picture.filename)
+    #tfilepath = Rails.root.join('app', 'assets', 'images', "t"+@picture.filename)
+    #bfilepath = Rails.root.join('app', 'assets', 'images', "b"+@picture.filename)
+    filepath = Rails.root.join('public', 'assets', ""+@picture.filename)
+    tfilepath = Rails.root.join('public', 'assets', "t"+@picture.filename)
+    bfilepath = Rails.root.join('public', 'assets', "b"+@picture.filename)
     File.delete(filepath)
     File.delete(tfilepath)
     File.delete(bfilepath)
