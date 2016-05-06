@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby "2.3.0"
 
-gem "paperclip", "~> 5.0.0.beta1"
+#gem "paperclip", "~> 5.0.0.beta1"
 gem "rmagick", "~> 2.15"
 gem "pg"
 gem "rails_12factor", group: :production

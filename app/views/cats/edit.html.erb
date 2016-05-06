@@ -12,7 +12,7 @@
 <%= form_for @picture do |f| %>
 	<p>
     	<%= f.hidden_field :title, :value => @cat.id %>
-   	 	<%= f.file_field :picture %>
+   	 	<%= f.file_field :picture, :required => true %>
   	</p>
   	<p>
     	<%= f.submit("Add a picture") %>
