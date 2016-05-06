@@ -1,5 +1,6 @@
 <%= Rails.root %>
 <%= Rails.root.join('app', 'assets', 'images', "kuva.jpg") %>
+<%= image_path("kuva.jpg") %>
 <%= link_to 'Home', root_url %>
 <table>
 <% @cats.each do |cat| %>
