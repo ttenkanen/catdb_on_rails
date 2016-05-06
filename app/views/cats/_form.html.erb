@@ -1,0 +1,29 @@
+<%= form_for @cat do |f| %>
+<!-- (Name, color, picture, race, gender) -->
+	<p>
+    	<%= f.label :name %><br>
+    	<%= f.text_field :name %>
+	</p>
+	<p>
+		<%= f.label :color %><br>
+		<%= f.color_field(:color) %>
+	</p>
+	<!-- <p>
+    	<%= f.label :picture %><br>
+   	 	<%= f.file_field :picture %>
+  	</p> -->
+	<p>
+    	<%= f.label :race %><br>
+    	<%= f.text_field :race %>
+	</p>
+	<p>
+    	<%= f.label :gender %><br>
+		<%= f.label :gender, "Female", :value => "true" %>
+    	<%= f.radio_button :gender, "female" %>
+		<%= f.label :gender, "Male", :value => "false" %>
+		<%= f.radio_button :gender, "male" %> 
+	</p>
+  	<p>
+    	<%= f.submit %>
+	</p>
+<% end %>

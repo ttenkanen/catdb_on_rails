@@ -1,0 +1,8 @@
+<%= link_to 'add a pic', new_picture_path %>
+
+<table>
+<% @pictures.each do |picture| %>
+<%= picture.title %> <br>
+<%= picture.filename %> <br>
+<% end %>
+</table>
