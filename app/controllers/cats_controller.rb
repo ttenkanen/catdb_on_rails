@@ -1,5 +1,7 @@
 class CatsController < ApplicationController
   
+  http_basic_authenticate_with name: "catdb", password: "qvantel"
+  
   # list our cats
   def index
     @cats = Cat.all
