@@ -1,6 +1,6 @@
 class CatsController < ApplicationController
   
-  http_basic_authenticate_with name: "catdb", password: "qvantel"
+  http_basic_authenticate_with name: "catdb", password: "password"
   
   # list our cats
   def index
