@@ -1,4 +1,4 @@
-<%= link_to 'Home', root_url %>
+<h1>Cat database</h1>
 <table>
 <% @cats.each do |cat| %>
 <% pictures = Picture.where("title LIKE '"+cat.id.to_s+"'") %>

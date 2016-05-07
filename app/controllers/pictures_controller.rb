@@ -1,12 +1,9 @@
 class PicturesController < ApplicationController
   before_action :set_s3_direct_post, only: [:new, :destroy, :create, :index]
   
-
-    def set_s3_direct_post
-      @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
-    end
-
-
+  def set_s3_direct_post
+    @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
+  end
   
   def index
     @pictures = Picture.all
@@ -24,10 +21,7 @@ class PicturesController < ApplicationController
 #    uploaded_io = params[:picture][:picture]
 #    filepath = Rails.root.join('app', 'assets', 'images', ts)
 #    tfilepath = Rails.root.join('app', 'assets', 'images', "t"+ts)
-##    bfilepath = Rails.root.join('app', 'assets', 'images', "b"+ts)
-#    #filepath = Rails.root.join('public', 'assets', 'images', ts)
-#    #tfilepath = Rails.root.join('public', 'assets', 'images', "t"+ts)
-#    #bfilepath = Rails.root.join('public', 'assets', 'images', "b"+ts)
+#    bfilepath = Rails.root.join('app', 'assets', 'images', "b"+ts)
 #    File.open(filepath, 'wb') do |file|
 #      file.write(uploaded_io.read)
 #    end
@@ -48,9 +42,6 @@ class PicturesController < ApplicationController
 #    filepath = Rails.root.join('app', 'assets', 'images', ""+@picture.filename)
 #    tfilepath = Rails.root.join('app', 'assets', 'images', "t"+@picture.filename)
 #    bfilepath = Rails.root.join('app', 'assets', 'images', "b"+@picture.filename)
-#    #filepath = Rails.root.join('public', 'assets', 'images', ""+@picture.filename)
-#    #tfilepath = Rails.root.join('public', 'assets', 'images', "t"+@picture.filename)
-#    #bfilepath = Rails.root.join('public', 'assets', 'images', "b"+@picture.filename)
 #    File.delete(filepath)
 #    File.delete(tfilepath)
 #    File.delete(bfilepath)
