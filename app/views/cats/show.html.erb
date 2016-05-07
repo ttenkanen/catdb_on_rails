@@ -10,7 +10,7 @@
 </div>
 
 <% @pictures.each do |p| %>
-	<%= image_tag("b"+p.filename) %>
+	<%= image_tag(p.filename, height: "300") %>
 <% end %>
 
 <br
